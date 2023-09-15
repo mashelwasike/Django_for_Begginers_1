@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Home</h1>
+{% for article in articles %}
+<img src="{{article.thumb.url}}" alt="">
+    <h1><a href="{% url 'details' slug=article.slug %}">{{article.title}}</a></h1>
+    <p>{{article.slug}}</p>
+    <p>{{article.body}}</p>
+    <p>{{article.date}}</p>
+{% endfor %}
+{% endblock %}
